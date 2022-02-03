@@ -13,5 +13,6 @@ export interface StateProps {
 
 export interface MediaProps {
   description: string
-  otherData?: string
+  lng: number
+  lat: number
 }

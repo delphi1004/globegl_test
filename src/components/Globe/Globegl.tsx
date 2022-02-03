@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { GlobeContainer } from './Globegl.styles'
 import Globe, { GlobeMethods } from 'react-globe.gl'
 import { useSelector } from 'react-redux'
@@ -9,6 +9,7 @@ let LAT_OFFSET = -2
 
 const Globegl = () => {
   const isCaseVisible = useSelector((state: RootState) => state.systemState.isCaseVisible)
+  const movetoLocation = useSelector((state: RootState) => state.systemState.moveToLocation)
   const globRef = useRef<GlobeMethods>()
 
   const globeClickHandler = (lat: any,lng: any) => {
@@ -27,6 +28,16 @@ const Globegl = () => {
     console.log('label', label)
     globeClickHandler(lat,lng)
   }
+
+  useEffect(() => {
+    if (globRef.current) {
+      LAT_OFFSET = -2
+      globRef.current.pointOfView(
+        { lat: movetoLocation.lat + LAT_OFFSET, lng: movetoLocation.lng, altitude: 0.4 },
+        4000
+      )
+    }
+  }, [movetoLocation])
 
   return (
     <GlobeContainer>

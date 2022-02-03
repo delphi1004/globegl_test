@@ -3,24 +3,35 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import { CaseContainer, Title, MediaContainer, MediaWrapper, StyledImage, MediaDescription, TopContainer, ExpandIconContainer } from './Case.styles'
 import {MediaProps} from './Case.type'
 import { useDispatch, useSelector } from 'react-redux'
-import { SetCaseVisible } from '../../reducers/stateReducer'
+import { SetCaseVisible, SetMoveToLocation } from '../../reducers/stateReducer'
 import { RootState } from '../../store'
 
 const testData = [
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    otherData: 'test data',
+    lat: 56.26392,
+    lng: 9.501785,
   },
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    otherData: 'test data',
+    lat: 60.128161,
+    lng: 18.643501,
   },
 ]
 
-const Media = ({ description }: MediaProps) => {
+const Media = ({ description,lng,lat }: MediaProps) => {
   const dispatch = useDispatch()
+
+  const onClickHandler = () =>{
+    console.log('description', description)
+    console.log('lng', lng)
+    console.log('lat', lat)
+
+    dispatch(SetCaseVisible(false))
+    dispatch(SetMoveToLocation(lng,lat))
+  }
   return (
-    <MediaWrapper onClick={() => dispatch(SetCaseVisible(false))}>
+    <MediaWrapper onClick={() => onClickHandler()}>
       <StyledImage src={process.env.PUBLIC_URL + '/image.jpeg'} alt={''} />
       <MediaDescription>{description}</MediaDescription>
     </MediaWrapper>
@@ -42,7 +53,7 @@ const Case = () => {
       <CaseContainer showCase={isCaseVisible}>
         <MediaContainer>
           {testData.map((item, i) => (
-            <Media key={i} description={item.description} />
+            <Media key={i} description ={item.description} lng={item.lng} lat={item.lat}/>
           ))}
         </MediaContainer>
       </CaseContainer>
