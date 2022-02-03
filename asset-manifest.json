@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/globegl_test/static/css/main.fd3d5347.css",
+    "main.js": "/globegl_test/static/js/main.ee4e22cb.js",
+    "static/js/787.97df703d.chunk.js": "/globegl_test/static/js/787.97df703d.chunk.js",
+    "index.html": "/globegl_test/index.html",
+    "main.fd3d5347.css.map": "/globegl_test/static/css/main.fd3d5347.css.map",
+    "main.ee4e22cb.js.map": "/globegl_test/static/js/main.ee4e22cb.js.map",
+    "787.97df703d.chunk.js.map": "/globegl_test/static/js/787.97df703d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd3d5347.css",
+    "static/js/main.ee4e22cb.js"
+  ]
+}
