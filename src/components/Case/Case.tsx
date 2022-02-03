@@ -5,7 +5,6 @@ import {MediaProps} from './Case.type'
 import { useDispatch, useSelector } from 'react-redux'
 import { SetCaseVisible } from '../../reducers/stateReducer'
 import { RootState } from '../../store'
-import testImage from './image.jpeg'
 
 const testData = [
   {
@@ -22,7 +21,7 @@ const Media = ({ description }: MediaProps) => {
   const dispatch = useDispatch()
   return (
     <MediaWrapper onClick={() => dispatch(SetCaseVisible(false))}>
-      <StyledImage src={testImage} alt={''} />
+      <StyledImage src={process.env.PUBLIC_URL + '/image.jpeg'} alt={''} />
       <MediaDescription>{description}</MediaDescription>
     </MediaWrapper>
   )
