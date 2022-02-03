@@ -14,6 +14,7 @@ export const ExpandIconContainer = styled.div<CaseContainerStyleprops>`
   color: white;
   transition:all 0.2s ease-in-out;
   opacity: ${({ showCase }) => (showCase ? 0 : 1)};
+  margin-bottom:1rem;
 ` 
 
 export const CaseContainer = styled.div<CaseContainerStyleprops>`
@@ -40,12 +41,13 @@ export const MediaContainer = styled.div`
   height: 100%;
   gap: 2rem;
   margin-bottom:1rem;
+  cursor:pointer;
 `
 
 export const MediaWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  box-sizing:border-box;
+  box-sizing: border-box;
   width: 100%;
   color: white;
   padding: 0 1rem;
@@ -57,9 +59,8 @@ export const MediaDescription = styled.p`
 `
 
 export const StyledImage = styled.img`
-    max-width:10rem;
-    max-height:10rem;
-    object-fit:10rem;
-    margin-right:1rem;
-
+  max-width: 10rem;
+  max-height: 10rem;
+  object-fit: 10rem;
+  margin-right: 1rem;
 `

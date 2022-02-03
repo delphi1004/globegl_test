@@ -16,7 +16,7 @@ const Globegl = () => {
     console.log('lng', lng)
     console.log('isCaseVisible', isCaseVisible)
     if(globRef.current){
-      LAT_OFFSET = isCaseVisible ? -4:-2
+      LAT_OFFSET = isCaseVisible ? -5:-2
       globRef.current.pointOfView({ lat: lat + LAT_OFFSET, lng: lng, altitude: 0.4 }, 4000)
     }
   }
