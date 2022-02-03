@@ -13,5 +13,5 @@ export interface StateProps {
 
 export interface MediaProps {
   description: string
-  imageUrl: string
+  otherData?: string
 }

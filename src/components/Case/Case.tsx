@@ -5,23 +5,24 @@ import {MediaProps} from './Case.type'
 import { useDispatch, useSelector } from 'react-redux'
 import { SetCaseVisible } from '../../reducers/stateReducer'
 import { RootState } from '../../store'
+import testImage from './image.jpeg'
 
 const testData = [
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    imageUrl: '/image.jpeg',
+    otherData: 'test data',
   },
   {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    imageUrl: '/image.jpeg',
+    otherData: 'test data',
   },
 ]
 
-const Media = ({ description, imageUrl }: MediaProps) => {
+const Media = ({ description }: MediaProps) => {
   const dispatch = useDispatch()
   return (
     <MediaWrapper onClick={() => dispatch(SetCaseVisible(false))}>
-      <StyledImage src={imageUrl} alt={''} />
+      <StyledImage src={testImage} alt={''} />
       <MediaDescription>{description}</MediaDescription>
     </MediaWrapper>
   )
@@ -42,7 +43,7 @@ const Case = () => {
       <CaseContainer showCase={isCaseVisible}>
         <MediaContainer>
           {testData.map((item, i) => (
-            <Media key={i} description={item.description} imageUrl={item.imageUrl} />
+            <Media key={i} description={item.description} />
           ))}
         </MediaContainer>
       </CaseContainer>
