@@ -16,9 +16,9 @@ const initState: SystemState = {
   isCaseVisible: true,
   isSystemRunning: true,
   moveToLocation: {
-    lng: 0,
-    lat: 0
-  }
+    lat: 60.128161,
+    lng: 18.643501,
+  },
 }
 
 interface Action extends SystemState {
